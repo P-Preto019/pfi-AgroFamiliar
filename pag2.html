@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="center">
+                <div class="navbar">
+                    <a href="#" id="loginBtn">Login</a>
+                    <a href="pfi1.0.html">Início</a>
+                    <div class="dropdown">
+                        <a href="#" id="cotacoesBtn">Cotações</a>
+                        <div class="dropdown-content" id="cotacoesMenu">
+                            <a id="cotacaoSojaNv">Carregando...</a>
+                            <a id="cotacaoMilhoNv">Carregando...</a>
+                            <a id="cotacaoTrigoNv">Carregando...</a>
+                            <a id="cotacaoFeijaoNv">Carregando...</a>
+                            <a id="cotacaoSuinosNv">Carregando...</a>
+                            <a id="cotacaoBoigordoNv">Carregando...</a>
+                        </div>
+                    </div>
+                    <div id="cotacaoSoja">Carregando...</div>
+                    <div class="cotacao" id="cotacaoDolar">Carregando...</div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="inicio" class="main-banner">
+        <p>AGRO FAMILIAR, SEMEANDO E CULTIVANDO DÚVIDAS E CONHECIMENTOS DA AGRICULTURA FAMILIAR</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Recomendações</h2>
+        <div class="recomendacoes-container">
+            <span class="seta seta-esquerda" onclick="slideLeft()">&#10094;</span>
+            <span class="seta seta-direita" onclick="slideRight()">&#10095;</span>
+
+            <div class="recomendacoes-wrapper" id="recomendacoesWrapper">
+                <div class="recomendacao" onclick="openRecomModal('src/3fundo.jpg', 'Soja/Feijão Dessecação pré plantio: com herbicidas para folha estreita (capim amargoso). E para folha larga (buva, leiteiro, nabo) Feito com produtos de contato e sistêmicos', 'Fonte: Romoaldo Rossi')">
+                    <img src="src/3fundo.jpg" alt="Soja/Feijão Dessecação pré plantio">
+                    <p>Soja e Feijão 
+                        Dessecação pré plantio : 
+                        com herbicidas para folha estreita (capim amargoso) E para folha larga (buva, leiteiro, nabo) Feito com produtos de contato e sistêmicos </p>
+                </div>
+                <div class="recomendacao" onclick="openRecomModal('src/3fundo.jpg', 'Soja/Feijão Limpa: Com produtos recomendados para ervas daninhas ospedeiras da região, como aveia, nabo, leiteiro, corda de viola, capim amargoso, capim pé de galinha e várias outras , feito a aplicação em torno de 30 a 40 dias após a emergência da cultura.  3 aplicação de fungicidas e inseticidas em torno de 15 a 20 dias de intervalo de cada aplicação. Rotacionando princípios ativos para não criar resistência e perder a eficiência de controle de doenças e pragas.', 'Fonte: Romoaldo Rossi')">
+                    <img src="src/3fundo.jpg" alt="Soja/Feijão Limpa">
+                    <p>Soja e Feijão 
+                        Limpa : 
+                        Com produtos recomendados para ervas daninhas ospedeiras da região, como aveia, nabo, leiteiro, corda de viola, capim amargoso, capim pé de galinha e várias outras , feito a aplicação em torno de 30 a 40 dias após a emergência da cultura.</p>
+                </div>
+                <div class="recomendacao" onclick="openRecomModal('src/3fundo.jpg', 'Soja/Feijão Dessecação da cultura. Com herbicidas de contato para melhor absorção do produto e para emparelhar a lavoura devido aos grãos verdes mais atrasados.', 'Fonte: Romoaldo Rossi')">
+                    <img src="src/3fundo.jpg" alt="Soja/Feijão Dessecação da cultura">
+                    <p>Soja e Feijão 
+                        Dessecação da cultura.
+                        Com herbicidas de contato para melhor absorção do produto e para emparelhar a lavoura devido aos grãos verdes mais atrasados.</p>
+                </div>
+                <div class="recomendacao" onclick="openRecomModal('src/3fundo.jpg', 'Milho Dessecação pré plantio : Com herbicidas para folha estreita (capim amargoso). E para folha larga (buva, leiteiro, nabo) Feito com produtos de contato e sistêmicos ', 'Fonte: Romoaldo Rossi')">
+                    <img src="src/3fundo.jpg" alt="Milho Dessecação pré plantio">
+                    <p>Milho
+
+                        Dessecação pré plantio : com herbicidas para folha estreita (capim amargoso)
+                        E para folha larga (buva, leiteiro, nabo).
+                        Feito com produtos de contato e sistêmicos </p>
+                </div>
+                <div class="recomendacao" onclick="openRecomModal('src/3fundo.jpg', 'Milho Limpa : Com produtos recomendados para ervas daninhas hospedeiras da região, como papuã, aveia, nabo, leiteiro, corda de viola, capim amargoso, capim pé de galinha e várias outras , feito a aplicação em torno de 20 a 30 dias após a emergência da cultura. De 3 a 5 aplicações para controle de cigarrinha, uma das principais pragas da cultira do milho. 3 aplicação de inseticida para controle de percevejo. Sempre rotacionando princípios ativos para não criar resistência e perder a eficiência de controle. ', 'Fonte: Romoaldo Rossi')">
+                    <img src="src/3fundo.jpg" alt="Milho Limpa">
+                    <p>Milho
+                        Limpa : 
+                        Com produtos recomendados para ervas daninhas sospedeiras da região, como papuã, aveia, nabo, leiteiro, corda de viola, capim amargoso, capim pé de galinha e várias outras , feito a aplicação em torno de 20 a 30 dias após a emergência da cultura.
+                        </p>
+                </div>
+                <div class="recomendacao" onclick="openRecomModal('src/3fundo.jpg', 'Milho Dessecação. Geralmente na Cultura de milho não é feita dessecação, é esperada chegar no ponto de umidade de colheita naturalmente.', 'Fonte: Romoaldo Rossi')">
+                    <img src="src/3fundo.jpg" alt="Milho Dessecação">
+                    <p>Milho 
+                        Dessecação da cultura.
+                        Geralmente na Cultura de milho não é feita dessecação, é esperada chegar no ponto de umidade de colheita naturalmente.
+                    </p>
+                </div>
+                <div class="recomendacao" onclick="openRecomModal('src/3fundo.jpg', 'Trigo Dessecação pré plantio : Com herbicidas para folha estreita (capim amargoso). E para folha larga (buva, leiteiro, nabo) feito com produtos de contato e sistêmicos. ', 'Fonte: Romoaldo Rossi')">
+                    <img src="src/3fundo.jpg" alt="Trigo Dessecação pré plantio">
+                    <p>Trigo
+                        Dessecação pré plantio: Com herbicidas para folha estreita (capim amargoso)
+                        E para folha larga (buva, leiteiro, nabo)
+                        Feito com produtos de contato e sistêmicos.
+                        </p>
+                </div>
+                <div class="recomendacao" onclick="openRecomModal('src/3fundo.jpg', 'Trigo Limpa : Com produtos recomendados para ervas daninhas hospedeiras da região, como papuã, aveia, nabo, leiteiro, corda de viola, capim amargoso, capim pé de galinha e várias outras , feito a aplicação em torno de 20 a 30 dias após a emergência da cultura.', 'Fonte: Romoaldo Rossi')">
+                    <img src="src/3fundo.jpg" alt="Trigo Limpa">
+                    <p>Trigo Limpa : 
+                        Com produtos recomendados para ervas daninhas hospedeiras da região, como papuã, aveia, nabo, leiteiro, corda de viola, capim amargoso, capim pé de galinha e várias outras , feito a aplicação em torno de 20 a 30 dias após a emergência da cultura.
+                        </p>
+                </div>
+                <div class="recomendacao" onclick="openRecomModal('src/3fundo.jpg', 'Trigo Limpa Aplicações: De 3 a 4 aplicações para controle de lagarta da folha e lagarta das espigas. 3 aplicação de inseticida para controle de percevejo. 2 a 3 aplicação de inseticida para controle de pulgão. Sempre rotacionando princípios ativos para não criar resistência e perder a eficiência de controle. 3 a 4  aplicação de fungicidas. A partir de 30 dias após a emergência, repete-se em torno de 12 a 15 dias de intervalo. Rotacionando princípios ativos para não criar resistência e perder a eficiência de controle de doenças. ', 'Fonte: Romoaldo Rossi')">
+                    <img src="src/3fundo.jpg" alt="Trigo Limpa">
+                    <p>Trigo Limpa Aplicações: De 3 a 4 aplicações para controle de lagarta da folha e lagarta das espigas. 3 aplicação de inseticida para controle de percevejo. 2 a 3 aplicação de inseticida para controle de pulgão. Sempre rotacionando princípios ativos para não criar resistência e perder a eficiência de controle. 3 a 4  aplicação de fungicidas. A partir de 30 dias após a emergência, repete-se em torno de 12 a 15 dias de intervalo. Rotacionando princípios ativos para não criar resistência e perder a eficiência de controle de doenças.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- inicio Modais -->
+    <!-- login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <form id="loginForm">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+                <br><br>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+        
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- recomendacoes -->
+    <div id="recomModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeRecom">&times;</span>
+            <h2 id="recomTitulo">Recomendação</h2>
+            <img id="recomImg" src="" alt="Imagem da recomendação" style="max-width: 70%; height: auto;">
+            <p id="recomTexto"></p>
+            <p id="recomFonte"></p>
+        </div>
+    </div>
+    <!-- fim modais-->
+
+    <footer>
+        <p>&copy; 2024 Agro Familiar. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // carrocel
+        let currentPosition = 0;
+        const itemWidth = 310;
+        const wrapper = document.getElementById("recomendacoesWrapper");
+        const totalItems = wrapper.children.length;
+        const maxPosition = -(itemWidth * (totalItems - 1));
+
+        function slideLeft() {
+            currentPosition += itemWidth;
+            if (currentPosition > 0) {
+                currentPosition = maxPosition;
+            }
+            wrapper.style.transform = `translateX(${currentPosition}px)`;
+        }
+
+        function slideRight() {
+            currentPosition -= itemWidth;
+            if (currentPosition < maxPosition) {
+                currentPosition = 0;
+            }
+            wrapper.style.transform = `translateX(${currentPosition}px)`;
+        }
+
+        // cotacao
+        var cotacoesBtn = document.getElementById("cotacoesBtn");
+        var cotacoesMenu = document.getElementById("cotacoesMenu");
+
+        cotacoesBtn.onclick = function() {
+            cotacoesMenu.style.display = cotacoesMenu.style.display === "block" ? "none" : "block";
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('#cotacoesBtn')) {
+                cotacoesMenu.style.display = "none";
+            }
+        }
+
+        // recomendacoes
+        function openRecomModal(imgSrc, text, source) {
+            document.getElementById("recomImg").src = imgSrc;
+            document.getElementById("recomTexto").textContent = text;
+            document.getElementById("recomFonte").textContent = source;
+            document.getElementById("recomModal").style.display = "block";
+        }
+
+        // fechar recomendacoes
+        document.getElementById("closeRecom").onclick = function() {
+            document.getElementById("recomModal").style.display = "none";
+        };
+
+        // login
+        document.getElementById("loginBtn").onclick = function() {
+            document.getElementById("loginModal").style.display = "block";
+        };
+
+        document.getElementById("closeLogin").onclick = function() {
+            document.getElementById("loginModal").style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("loginModal")) {
+                document.getElementById("loginModal").style.display = "none";
+            }
+            if (event.target == document.getElementById("recomModal")) {
+                document.getElementById("recomModal").style.display = "none";
+            }
+        };
+
+       
+
+        
+
+        
+
+         const apiKey = '891b1887ae15ac694ea5db91';
+         const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
+ 
+         // cotacao dolar
+         async function obterCotacao() {
+             try {
+                 const response = await fetch(url);
+                 const data = await response.json();
+                 
+                 if (data.result === 'success') {
+                     const cotacao = data.conversion_rates.BRL; 
+                     document.getElementById('cotacaoDolar').textContent = `Cotação do Dólar R$ ${cotacao.toFixed(2)}`;
+                 } else {
+                     document.getElementById('cotacaoDolar').textContent = 'Erro ao obter a cotação.';
+                 }
+             } catch (error) {
+                 document.getElementById('cotacaoDolar').textContent = 'Erro ao carregar os dados.';
+             }
+         }
+ 
+         obterCotacao();
+
+         // cotacao soja
+         async function obterCotacaoSoja() {
+            const urls = `http://localhost:5000/api/cotacao-soja`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoSoja) {
+                    document.getElementById('cotacaoSoja').textContent = `Soja em Grão Sc 60Kg R$ ${data.cotacaoSoja}`;
+                    document.getElementById('cotacaoSojaNv').textContent = `Soja em Grão Sc 60Kg R$ ${data.cotacaoSoja}`;
+                } else {
+                    document.getElementById('cotacaoSoja').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoSoja').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoSoja();
+
+        // cotacao milho
+        async function obterCotacaoMilho() {
+            const urls = `http://localhost:5000/api/cotacao-milho`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoMilho) {
+                    document.getElementById('cotacaoMilhoNv').textContent = `Milho em Grão Sc 60Kg R$ ${data.cotacaoMilho}`;
+                } else {
+                    document.getElementById('cotacaoMilhoNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoMilhoNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoMilho();
+
+        // cotacao trigo
+        async function obterCotacaoTrigo() {
+            const urls = `http://localhost:5000/api/cotacao-trigo`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoTrigo) {
+                    document.getElementById('cotacaoTrigoNv').textContent = `Trigo em Grão 1T R$ ${data.cotacaoTrigo}`;
+                } else {
+                    document.getElementById('cotacaoTrigoNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoTrigoNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoTrigo();
+
+        // cotacao feijao
+        async function obterCotacaoFeijao() {
+            const urls = `http://localhost:5000/api/cotacao-feijao`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoFeijao) {
+                    document.getElementById('cotacaoFeijaoNv').textContent = `Feijao em Grão Sc 60Kg R$ ${data.cotacaoFeijao}`;
+                } else {
+                    document.getElementById('cotacaoFeijaoNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoFeijaoNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoFeijao();
+
+        // cotacao Suinos
+        async function obterCotacaoSuinos() {
+            const urls = `http://localhost:5000/api/cotacao-suinos`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoSuinos) {
+                    document.getElementById('cotacaoSuinosNv').textContent = `Suínos o Kg R$ ${data.cotacaoSuinos}`;
+                } else {
+                    document.getElementById('cotacaoSuinosNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoSuinosNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoSuinos();
+
+        // cotacao Boigordo
+        async function obterCotacaoBoigordo() {
+            const urls = `http://localhost:5000/api/cotacao-boigordo`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoBoigordo) {
+                    document.getElementById('cotacaoBoigordoNv').textContent = `Boi-gordo Arroba vivo R$ ${data.cotacaoBoigordo}`;
+                } else {
+                    document.getElementById('cotacaoBoigordoNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoBoigordoNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoBoigordo();
+        // modal do login
+        var loginModal = document.getElementById("loginModal");
+        var loginBtn = document.getElementById("loginBtn");
+        var closeModal = document.getElementById("closeModal");
+        var loginForm = document.getElementById("loginForm");
+
+            loginForm.onsubmit = function(event) {
+                event.preventDefault(); 
+                window.location.href = "logado.html"; // leve pra pagina logada
+            };
+            loginBtn.onclick = function() {
+                loginModal.style.display = "flex";
+            }
+
+            closeModal.onclick = function() {
+                loginModal.style.display = "none";
+            }
+    </script>
+</body>
+</html>

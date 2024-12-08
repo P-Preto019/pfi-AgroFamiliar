@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="center">
+                <div class="navbar">
+                    <a href="#" id="loginBtn">Login</a>
+                    <a href="#inicio">Início</a>
+                    <div class="dropdown">
+                        <a href="#" id="cotacoesBtn">Cotações</a>
+                        <div class="dropdown-content" id="cotacoesMenu">
+                            <a id="cotacaoSojaNv">Carregando...</a>
+                            <a id="cotacaoMilhoNv">Carregando...</a>
+                            <a id="cotacaoTrigoNv">Carregando...</a>
+                            <a id="cotacaoFeijaoNv">Carregando...</a>
+                            <a id="cotacaoSuinosNv">Carregando...</a>
+                            <a id="cotacaoBoigordoNv">Carregando...</a>
+                        </div>
+                    </div>
+                    <div id="cotacaoSoja">Carregando...</div>
+                    <div class="cotacao" id="cotacaoDolar">Carregando...</div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="inicio" class="main-banner">
+        <p>AGRO FAMILIAR, SEMEANDO E CULTIVANDO DÚVIDAS E CONHECIMENTOS DA AGRICULTURA FAMILIAR</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Notícias em Destaque</h2>
+        <button id="addPerguntaBtn">Adicionar Pergunta</button>
+        <div class="noticias-destaque">
+            <div class="noticia">
+                <a href="https://www.noticiasagricolas.com.br/" target="_blank">
+                    <img src="src/grafi.jpg" alt="Notícias e Curiosidades do Agronegócio">
+                    <h3>Notícias e Curiosidades do Agronegócio</h3>
+                </a>
+            </div>
+
+            <div class="noticia">
+                <img src="src/3fundo.jpg" alt="Manejo da soja" id="recomImg">
+                <h3 id="recomTitulo">Recomendações</h3>
+                <p>Esta aba oferece informações sobre os cuidados essenciais para os cultivos agrícolas, incluindo manejo de solo, irrigação, controle de pragas e doenças, e práticas para garantir a saúde das plantas e a qualidade das colheitas.</p>
+            </div>
+
+            <div class="noticia">
+                <img src="src/lamp.jpg" alt="Pergunta sobre ferrugem no feijão preto">
+                <h3 id="perguntaBtn">Perguntas </h3>
+                <p>Aqui você pode fazer perguntas sobre cuidados com os cultivos agrícolas, desde manejo de solo até controle de pragas e doenças.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Agro Familiar. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- inicio Modais -->
+    <!-- login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <form id="loginForm">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+                <br><br>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+        
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- recomendacoes -->
+    <div id="recomModal" class="modal">
+        <span class="close" id="closeRecom">&times;</span>
+    </div>
+
+    <!-- perguntas -->
+    <div id="perguntaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closePergunta">&times;</span>
+            <h2>Perguntas</h2>
+            <div class="perguntas-lista">
+                <div class="pergunta-item">
+                    <p><strong>Como prevenir o a ferrugem no feijão preto?</strong></p>
+                    <p>Respostas: 1</p>
+                </div>
+                <div class="pergunta-item">
+                    <p><strong>Oque fazer para matar cigarinha no milho?</strong></p>
+                    <p>Respostas: 1</p>
+                </div>
+                <div class="pergunta-item">
+                    <p><strong>Quais as vantagens do plantio direto?</strong></p>
+                    <p>Respostas: 1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- detalhe da Pergunta -->
+    <div id="detalhePerguntaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeDetalhePergunta">&times;</span>
+            <h2 id="detalhePerguntaTitulo">Detalhe da Pergunta</h2>
+            <p id="detalhePerguntaTexto">Resposta completa</p>
+            <p id="detalhePerguntaResposta"><strong>Respostas:</strong> Resposta aparecera</p>
+        </div>
+    </div>
+
+    <!-- adicionar Pergunta -->
+    <div id="addPerguntaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeAddPergunta">&times;</span>
+            <h2>Adicionar Nova Pergunta</h2>
+            <form id="addPerguntaForm">
+                <label for="novaPergunta">Pergunta:</label>
+                <textarea id="novaPergunta" rows="4" required></textarea>
+                <br><br>
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+    </div>
+    <!-- fim Modais -->
+
+    <script>
+        // modal do login
+        var loginModal = document.getElementById("loginModal");
+        var loginBtn = document.getElementById("loginBtn");
+        var closeModal = document.getElementById("closeModal");
+        var loginForm = document.getElementById("loginForm");
+
+            loginForm.onsubmit = function(event) {
+                event.preventDefault(); 
+                window.location.href = "logado.html"; // leve pra pagina logada
+            };
+            loginBtn.onclick = function() {
+                loginModal.style.display = "flex";
+            }
+
+            closeModal.onclick = function() {
+                loginModal.style.display = "none";
+            }
+
+        // modal da recomendacao
+        var recomModal = document.getElementById("recomModal");
+        var recomImg = document.getElementById("recomImg");
+        var recomTitulo = document.getElementById("recomTitulo");
+        var closeRecom = document.getElementById("closeRecom");
+
+        recomImg.onclick = function() {
+            window.location.href = "pag2.html";
+            recomModal.style.display = "flex";
+        }
+
+        recomTitulo.onclick = function() {
+            window.location.href = "pag2.html";
+            recomModal.style.display = "flex";
+        }
+
+        closeRecom.onclick = function() {
+            recomModal.style.display = "none";
+        }
+
+        // modal da cotacao
+        var cotacoesBtn = document.getElementById("cotacoesBtn");
+        var cotacoesMenu = document.getElementById("cotacoesMenu");
+
+        cotacoesBtn.onclick = function(event) {
+            event.preventDefault(); 
+            cotacoesMenu.style.display = cotacoesMenu.style.display === "block" ? "none" : "block";
+        }
+
+        // modal da pergunta
+        var perguntaModal = document.getElementById("perguntaModal");
+        var perguntaBtn = document.getElementById("perguntaBtn");
+        var closePergunta = document.getElementById("closePergunta");
+
+        perguntaBtn.onclick = function() {
+            perguntaModal.style.display = "flex";
+        }
+
+        closePergunta.onclick = function() {
+            perguntaModal.style.display = "none";
+        }
+
+        // modal dinamico pgt
+        var detalhePerguntaModal = document.getElementById("detalhePerguntaModal");
+        var detalhePerguntaTitulo = document.getElementById("detalhePerguntaTitulo");
+        var detalhePerguntaTexto = document.getElementById("detalhePerguntaTexto");
+        var detalhePerguntaResposta = document.getElementById("detalhePerguntaResposta");
+        var closeDetalhePergunta = document.getElementById("closeDetalhePergunta");
+
+        var perguntasItens = document.querySelectorAll(".pergunta-item");
+
+        perguntasItens.forEach(function(item, index) {
+            item.addEventListener("click", function() {
+                var perguntaTitulo = item.querySelector("p strong").innerText;
+                var perguntaRespostas = `Resposta para a pergunta ${index + 1}`;
+
+                detalhePerguntaTitulo.innerText = `Pergunta ${index + 1}`;
+                detalhePerguntaTexto.innerText = perguntaTitulo;
+                detalhePerguntaResposta.innerHTML = `<strong>Respostas:</strong> ${perguntaRespostas}`;
+
+                detalhePerguntaModal.style.display = "flex";
+            });
+        });
+
+        closeDetalhePergunta.onclick = function() {
+            detalhePerguntaModal.style.display = "none";
+        }
+
+        // add pergunta
+        var addPerguntaBtn = document.getElementById("addPerguntaBtn");
+        var addPerguntaModal = document.getElementById("addPerguntaModal");
+        var closeAddPergunta = document.getElementById("closeAddPergunta");
+        var addPerguntaForm = document.getElementById("addPerguntaForm");
+        var novaPerguntaTextarea = document.getElementById("novaPergunta");
+        var perguntasLista = document.querySelector(".perguntas-lista");
+
+        addPerguntaBtn.onclick = function() {
+            addPerguntaModal.style.display = "flex";
+        };
+
+        closeAddPergunta.onclick = function() {
+            addPerguntaModal.style.display = "none";
+        };
+
+        addPerguntaForm.onsubmit = function(event) {
+            event.preventDefault();
+
+            var novaPergunta = novaPerguntaTextarea.value.trim();
+
+            if (novaPergunta === "") {
+                alert("Por favor, insira uma pergunta.");
+                return;
+            }
+
+            var perguntaItem = document.createElement("div");
+            perguntaItem.classList.add("pergunta-item");
+
+            var perguntaTexto = document.createElement("p");
+            perguntaTexto.innerHTML = `<strong>${novaPergunta}</strong>`;
+            var respostaTexto = document.createElement("p");
+            respostaTexto.innerText = "Respostas: 0";
+
+            perguntaItem.appendChild(perguntaTexto);
+            perguntaItem.appendChild(respostaTexto);
+            perguntasLista.appendChild(perguntaItem);
+
+            novaPerguntaTextarea.value = "";
+            addPerguntaModal.style.display = "none";
+        };
+
+        const apiKey = '891b1887ae15ac694ea5db91';
+         const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
+ 
+         // cotacao dolar
+         async function obterCotacao() {
+             try {
+                 const response = await fetch(url);
+                 const data = await response.json();
+                 
+                 if (data.result === 'success') {
+                     const cotacao = data.conversion_rates.BRL; 
+                     document.getElementById('cotacaoDolar').textContent = `Cotação do Dólar R$ ${cotacao.toFixed(2)}`;
+                 } else {
+                     document.getElementById('cotacaoDolar').textContent = 'Erro ao obter a cotação.';
+                 }
+             } catch (error) {
+                 document.getElementById('cotacaoDolar').textContent = 'Erro ao carregar os dados.';
+             }
+         }
+ 
+         obterCotacao();
+
+         // cotacao soja
+         async function obterCotacaoSoja() {
+            const urls = `http://localhost:5000/api/cotacao-soja`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoSoja) {
+                    document.getElementById('cotacaoSoja').textContent = `Soja em Grão Sc 60Kg R$ ${data.cotacaoSoja}`;
+                    document.getElementById('cotacaoSojaNv').textContent = `Soja em Grão Sc 60Kg R$ ${data.cotacaoSoja}`;
+                } else {
+                    document.getElementById('cotacaoSoja').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoSoja').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoSoja();
+
+        // cotacao milho
+        async function obterCotacaoMilho() {
+            const urls = `http://localhost:5000/api/cotacao-milho`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoMilho) {
+                    document.getElementById('cotacaoMilhoNv').textContent = `Milho em Grão Sc 60Kg R$ ${data.cotacaoMilho}`;
+                } else {
+                    document.getElementById('cotacaoMilhoNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoMilhoNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoMilho();
+
+        // cotacao trigo
+        async function obterCotacaoTrigo() {
+            const urls = `http://localhost:5000/api/cotacao-trigo`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoTrigo) {
+                    document.getElementById('cotacaoTrigoNv').textContent = `Trigo em Grão 1T R$ ${data.cotacaoTrigo}`;
+                } else {
+                    document.getElementById('cotacaoTrigoNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoTrigoNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoTrigo();
+
+        // cotacao feijao
+        async function obterCotacaoFeijao() {
+            const urls = `http://localhost:5000/api/cotacao-feijao`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoFeijao) {
+                    document.getElementById('cotacaoFeijaoNv').textContent = `Feijao em Grão Sc 60Kg R$ ${data.cotacaoFeijao}`;
+                } else {
+                    document.getElementById('cotacaoFeijaoNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoFeijaoNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoFeijao();
+
+        // cotacao Suinos
+        async function obterCotacaoSuinos() {
+            const urls = `http://localhost:5000/api/cotacao-suinos`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoSuinos) {
+                    document.getElementById('cotacaoSuinosNv').textContent = `Suínos o Kg R$ ${data.cotacaoSuinos}`;
+                } else {
+                    document.getElementById('cotacaoSuinosNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoSuinosNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoSuinos();
+
+        // cotacao Boigordo
+        async function obterCotacaoBoigordo() {
+            const urls = `http://localhost:5000/api/cotacao-boigordo`;
+
+            try {
+                const response = await fetch(urls);
+                const data = await response.json();
+
+                if (data.cotacaoBoigordo) {
+                    document.getElementById('cotacaoBoigordoNv').textContent = `Boi-gordo Arroba vivo R$ ${data.cotacaoBoigordo}`;
+                } else {
+                    document.getElementById('cotacaoBoigordoNv').textContent = 'Erro ao obter a cotação.';
+                }
+            } catch (error) {
+                document.getElementById('cotacaoBoigordoNv').textContent = 'Erro ao carregar a cotação.';
+            }
+        }
+        obterCotacaoBoigordo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2E8B57;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #006400;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1000;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #006400;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #32CD32;
+}
+
+.cotacoes-menu {
+    display: none;
+}
+
+.main-banner {
+    position: relative;
+    background-image: url("src/fundo_soja.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.main-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.main-banner p {
+    position: relative;
+    z-index: 2;
+    font-size: 28px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.content-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.noticias-destaque {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.noticia {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 30%;
+}
+
+.noticia img {
+    max-width: 100%;
+}
+
+footer {
+    background-color: #006400;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);  
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #f0f4f8;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid #d0d7de;
+    animation: slideDown 0.3s ease;
+    text-align: center;
+}
+
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+    width: 100%;  
+    padding: 12px 15px; 
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;  
+    box-sizing: border-box;  
+}
+
+.modal-content button {
+    padding: 12px 20px; 
+    background-color: #006400;  
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #32CD32;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.modal-content .close:hover {
+    color: #006400;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+.perguntas-lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.pergunta-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d0d7de;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.pergunta-item:hover {
+    transform: scale(1.02);
+}
+
+.pergunta-item p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.4;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#detalhePerguntaModal .modal-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+#detalhePerguntaModal h2 {
+    color: #006400;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#detalhePerguntaModal p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);  
+    align-items: center;
+    justify-content: center;
+}
+
+#addPerguntaBtn {
+    padding: 10px 20px;
+    background-color: #2E8B57;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#addPerguntaBtn:hover {
+    background-color: #006400;
+}
+
+#addPerguntaModal .modal-content {
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+#addPerguntaModal textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+#addPerguntaModal button {
+    padding: 12px 20px;
+    background-color: #006400;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#addPerguntaModal button:hover {
+    background-color: #32CD32;
+}
+
+#loginModal .modal-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#loginModal input {
+    width: 100%; 
+    max-width: 300px; 
+    padding: 10px;
+    margin: 10px 0; 
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#loginModal button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #006400;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#loginModal button:hover {
+    background-color: #32CD32;
+}
